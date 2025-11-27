@@ -1,27 +1,22 @@
+function init(){
+    const navUL = document.querySelector("nav ul")
+    const user = (sessionStorage.getItem("user"))
 
-const main = document.querySelector("main")
-
-
-
-const button = document.querySelector("button")
-button.addEventListener("click", searchFriends)
-
-async function searchFriends(){
-    const persons = await fetch("http://localhost:3333").then(response => response.json())
-
-    persons.map((person, index ) => {
-        main.innerHTML += `
-        <section>
-            <h2>Nome: ${person.name}</h2>
-            <p>E-mail:${person.email} </p>
-            <p>Idade: ${person.age}</p>
-            <p>Apelido: ${person.nickname}</p>
-        </section>
-        ${index + 1 === persons.length ? "" : "<hr>"}
+    if(user){
+        navUL.innerHTML += `
+        <li>
+            <h2>Usuário: ${user.name}</h2>
+        </li>
+        <li>
+            <button>Sair</button>
+        </li>
         `
-    })
+        return
+    }
+    navUL.innerHTML += `
+    <li>
+        <a href="./pages/login/login.html">Login</a>
+    </li>
+    `
 }
-/*
-//fetch buscar/ vai pegar 
-    //então (then) e converte pra json
-// assincronismo (async / await) vai trabalhar de forma assincrona até q a promessa tenha uma resposta/ promises*/
+init()
