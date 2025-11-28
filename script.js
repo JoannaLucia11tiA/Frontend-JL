@@ -8,9 +8,11 @@ function init(){
             <h2>Usuário: ${user.name}</h2>
         </li>
         <li>
-            <button>Sair</button>
+            <button id="logout">Sair</button>
         </li>
         `
+
+        document.querySelector("#logout").addEventListener("click", logout)
         return
     }
     navUL.innerHTML += `
@@ -19,4 +21,10 @@ function init(){
     </li>
     `
 }
+
+function logout(){
+    sessionStorageStorage.removeItem(user)
+    window.location.reload
+}
+
 init()
