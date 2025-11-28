@@ -1,7 +1,7 @@
 const main = document.querySelector("main")
 
 async function searchFriends(){
-    const persons = await fetch("http://localhost:3333").then(response => response.json())
+    const persons = await fetch("https://backend-jl-p6d4.vercel.app/").then(response => response.json())
 
     persons.map((person, index ) => {
         main.innerHTML += `
