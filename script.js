@@ -1,6 +1,6 @@
 function init(){
     const navUL = document.querySelector("nav ul")
-    const user = (sessionStorage.getItem("user"))
+    const user = JSON.parse(sessionStorage.getItem("user"))
 
     if(user){
         navUL.innerHTML += `
@@ -23,8 +23,8 @@ function init(){
 }
 
 function logout(){
-    sessionStorageStorage.removeItem(user)
-    window.location.reload
+    sessionStorage.removeItem("user")
+    window.location.reload()
 }
 
 init()

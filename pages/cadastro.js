@@ -23,7 +23,7 @@ async function signUpFriends(){
         nickname,
         password
     }
-    const response = await fetch("https://backend-jl-p6d4.vercel.app/", {
+    const response = await fetch("https://backend-jl-p6d4.vercel.app/cadastrar", {
         method: "POST",
         headers:{
             "Content-Type": "application/json"

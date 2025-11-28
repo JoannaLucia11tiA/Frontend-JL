@@ -18,7 +18,7 @@ async function signInFriends(){
         email,
         password
     }
-    const response = await fetch("https://backend-jl-p6d4.vercel.app/", {
+    const response = await fetch("https://backend-jl-p6d4.vercel.app/login", {
         method: "POST",
         headers:{
             "Content-Type": "application/json"
